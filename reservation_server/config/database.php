@@ -3,7 +3,7 @@
   $dbHost = "localhost";
   $dbUsername = "root";
   $dbPassword = "";
-  $dbName = "reservations_blog_db";
+  $dbName = "reservations_react";
 
   // Create database connection
   $conn = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);

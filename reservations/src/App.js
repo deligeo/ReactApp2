@@ -1,10 +1,10 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'; // npm install react-router-dom
+import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
 import './App.css';
 import Navbar from './components/Navbar';
-import CreatePost from './components/CreatePost';
-// import Post from './components/Post';
-// import PostList from './components/PostList';
+import CreateReservation from './components/CreateReservation';
+import ReservationList from './components/ReservationList';
+import Reservation from './components/Reservation';
 
 function App() {
   return (
@@ -12,9 +12,9 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          {/* <Route path={"/"} element={<PostList />} /> */}
-          <Route path={"/create-post"} element={<CreatePost />} />
-          {/* <Route path={"/post/:id"} element={<Post />} /> */}
+          <Route path={"/"} element={<ReservationList />} />
+          <Route path={"/create-reservation"} element={<CreateReservation />} />
+          <Route path={"/reservation/:id"} element={<Reservation />} />
         </Routes>
       </BrowserRouter>
     </div>

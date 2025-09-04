@@ -25,7 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         'id' => $reservation['id'],
         'location' => $reservation['location'],
         'time_slot' => $reservation['time_slot'],
-        'is_booked' => $reservation['is_booked']
+        'is_booked' => $reservation['is_booked'],
+        'imageName' => $reservation['imageName'] ?? null
       ]
     ];
 

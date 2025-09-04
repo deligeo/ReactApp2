@@ -30,6 +30,14 @@ function Reservation() {
       <h2>{reservation.location}</h2>
       <p>Time: {reservation.time_slot}</p>
       <p>Booked: {reservation.is_booked}</p>
+      {reservation.imageName && (
+              <img
+                src={`${process.env.REACT_APP_API_BASE_URL}/uploads/${reservation.imageName}`}
+                alt={reservation.location}
+                className="img mb-5"
+                style={{ maxWidth: "150px",  maxHeight: "150px"}}
+              />
+            )}
     </div>
   );
 }

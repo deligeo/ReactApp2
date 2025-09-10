@@ -6,7 +6,10 @@ function Reservation() {
   const [reservation, setReservation] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost/ReactApp2/reservation_server/api/reservation.php/${id}`)
+    fetch(`http://localhost/ReactApp2/reservation_server/api/reservation.php/${id}`, {
+      method: 'GET',
+      credentials: 'include'  // ✅ This is to send the PHP session cookie
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log("Fetched reservation data:", data);

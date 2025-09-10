@@ -15,7 +15,8 @@ function ReservationsList()
         const fetchReservations = async () => {
             setIsLoading(true);
             try {
-                const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/reservations.php?page=${currentPage}`);
+                const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/reservations.php?page=${currentPage}`,
+                     { withCredentials: true });
                 setReservations(response.data.reservations);
                 setTotalReservations(response.data.totalReservations);
                 setIsLoading(false);

@@ -1,11 +1,23 @@
 <?php
-header("Access-Control-Allow-Origin: *");  // Or specify your frontend domain
+
+session_start();
+
+// header("Access-Control-Allow-Origin: *");  // Or specify your frontend domain
+header("Access-Control-Allow-Origin: http://localhost:3000");  // Or your frontend domain
 header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Allow-Credentials: true");
 header("Content-Type: application/json");
 
 require_once('../config/config.php');
 require_once('../config/database.php');
+
+// 🔒 Require authentication
+if (!isset($_SESSION['user'])) {
+    http_response_code(401);
+    echo json_encode(["success" => false, "message" => "Unauthorized"]);
+    exit;
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') { // handle preflight
     http_response_code(200);

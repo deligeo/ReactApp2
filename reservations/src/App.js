@@ -9,7 +9,7 @@ import Navbar from './components/Navbar';
 import CreateReservation from './components/CreateReservation';
 import ReservationList from './components/ReservationList';
 import Reservation from './components/Reservation';
-import EditPost from './components/EditReservation';
+import EditReservation from './components/EditReservation';
 
 function App() {
   return (
@@ -19,12 +19,12 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
 
-          {/* Protected route for editing posts */}
+          {/* Protected route for editing reservations */}
           <Route
             path="/edit/:id"
             element={
               <ProtectedRoute>
-                <EditPost />
+                <EditReservation />
               </ProtectedRoute>
             }
           />
